@@ -27,9 +27,8 @@ APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 ~~~
 
 ~~~bash
-cd $HOME_APPS
-mkdir -pv $APP_NAME/$COMP_VERSION/build
-cd $APP_NAME/$COMP_VERSION/build
+mkdir -pv $APP_BUILD
+cd $APP_BUILD
 curl -L https://github.com/pdcs-cca/compila-WRF/raw/main/src/zlib-1.2.12.tar.gz | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
 ./configure prefix=$APP_INSTALL  
