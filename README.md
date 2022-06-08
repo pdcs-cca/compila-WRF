@@ -2,7 +2,7 @@
 
 Compilación del modelo WRF 4.3.3 utilizando compiladores de intel.
 
-* zlib-1.2.12.tar.gz
+* [zlib](README.md#zlib)1.2.12.tar.gz
 * curl-7.82.0.tar.gz
 * jasper-1.900.22.tar.gz
 * libaec-1.0.6.tar.gz
