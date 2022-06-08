@@ -104,7 +104,7 @@ mkdir -pv $APP_BUILD
 cd $APP_BUILD
 curl -L $APP_URL | tar xJvf -
 cd $APP_NAME-$APP_VERSION/
-./configure --with-openssl --prefix=$APP_INSTALL  
+./configure --prefix=$APP_INSTALL  
 make
 make install
 ~~~
