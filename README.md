@@ -102,7 +102,7 @@ APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/libpng-1.6.37.tar.x
 ~~~bash
 mkdir -pv $APP_BUILD
 cd $APP_BUILD
-curl -L $APP_URL | tar xzvf -
+curl -L $APP_URL | tar xJvf -
 cd $APP_NAME-$APP_VERSION/
 ./configure --with-openssl --prefix=$APP_INSTALL  
 make
