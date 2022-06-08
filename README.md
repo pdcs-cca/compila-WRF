@@ -109,3 +109,27 @@ make
 make install
 ~~~
 
+## JASPERLIB jasper-1.900.22
+
+~~~bash
+HOME_APPS=/opt/software/apps
+COMP_VERSION=intel/2021u5
+export CC=icc FC=ifort F77=ifort F90=ifort CXX=icpc
+export CFLAGS="-O3"
+APP_NAME=jasper
+APP_VERSION=1.900.22
+APP_ROOT=$HOME_APPS/$APP_NAME
+APP_BUILD=$APP_ROOT/$COMP_VERSION/build
+APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
+APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/jasper-1.900.22.tar.gz
+~~~
+
+~~~bash
+mkdir -pv $APP_BUILD
+cd $APP_BUILD
+curl -L $APP_URL | tar xJvf -
+cd $APP_NAME-$APP_VERSION/
+./configure --prefix=$APP_INSTALL  
+make
+make install
+~~~
