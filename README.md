@@ -194,7 +194,7 @@ COMP_VERSION=intel/2021u5
 export CC=icc FC=ifort F77=ifort F90=ifort CXX=icpc
 export CFLAGS="-O3"
 APP_NAME=netcdf-fortran
-APP_VERSION=4.5.5
+APP_VERSION=4.5.4
 APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
@@ -206,7 +206,7 @@ mkdir -pv $APP_BUILD
 cd $APP_BUILD
 curl -L $APP_URL | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
-./configure --enable-fortran --with-zlib=$ZLIB_ROOT--with-szlib=$LIBAEC_ROOT --prefix=$APP_INSTALL  
+./configure  --prefix=$APP_INSTALL  
 make -j4
 make -j4 check
 make install
