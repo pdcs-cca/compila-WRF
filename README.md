@@ -156,12 +156,12 @@ curl -L $APP_URL | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
 ./configure --enable-fortran --with-zlib=$ZLIB_ROOT--with-szlib=$LIBAEC_ROOT --prefix=$APP_INSTALL  
 make -j4
+make -j4 check
 make install
 ~~~
 
 
 ## NETCDF-C
-netcdf-c-4.8.1
 ~~~bash
 HOME_APPS=/opt/software/apps
 COMP_VERSION=intel/2021u5
