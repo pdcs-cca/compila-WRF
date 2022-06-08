@@ -6,10 +6,10 @@ Compilación del modelo WRF 4.3.3 utilizando compiladores de intel.
 * [libaec](README.md#libaec) 1.0.6.tar.gz
 * [curl](README.md#curl) 7.82.0.tar.gz
 * [jasper](README.md#jasper) 1.900.22.tar.gz
-* [libpng](README.md#libpng) 1.6.37.tar.xz
+* [libpng](README.md#libpng) 1.6.37.tar.gz
 * [hdf5](README.md#hdf5) 1.10.8.tar.gz
-* [netcdf-C](README.md#netcdf-C) c-4.8.1.tar.gz
-* [netcdf-Fortran](README.md#netcdf-Fortran) fortran-4.5.4.tar.gz
+* [netcdf-c](README.md#netcdf-c) c-4.8.1.tar.gz
+* [netcdf-fortran](README.md#netcdf-fortran) fortran-4.5.4.tar.gz
 
 
 ## ZLIB
@@ -135,7 +135,6 @@ make install
 ~~~
 
 ## HDF5
-hdf5-1.10.8
 
 ~~~bash
 HOME_APPS=/opt/software/apps
@@ -156,6 +155,59 @@ cd $APP_BUILD
 curl -L $APP_URL | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
 ./configure --enable-fortran --with-zlib=$ZLIB_ROOT--with-szlib=$LIBAEC_ROOT --prefix=$APP_INSTALL  
-make
+make -j4
+make install
+~~~
+
+
+## NETCDF-C
+netcdf-c-4.8.1
+~~~bash
+HOME_APPS=/opt/software/apps
+COMP_VERSION=intel/2021u5
+export CC=icc FC=ifort F77=ifort F90=ifort CXX=icpc
+export CFLAGS="-O3"
+APP_NAME=netcdf-c
+APP_VERSION=4.8.1
+APP_ROOT=$HOME_APPS/$APP_NAME
+APP_BUILD=$APP_ROOT/$COMP_VERSION/build
+APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
+APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/${APP_NAME}-${APP_VERSION}.tar.gz
+~~~
+
+~~~bash
+mkdir -pv $APP_BUILD
+cd $APP_BUILD
+curl -L $APP_URL | tar xzvf -
+cd $APP_NAME-$APP_VERSION/
+./configure --disable-dap-remote-tests --prefix=$APP_INSTALL  
+make -j4
+make -j4 check
+make install
+~~~
+
+
+## NETCDF-FORTRAN
+~~~bash
+HOME_APPS=/opt/software/apps
+COMP_VERSION=intel/2021u5
+export CC=icc FC=ifort F77=ifort F90=ifort CXX=icpc
+export CFLAGS="-O3"
+APP_NAME=netcdf-fortran
+APP_VERSION=4.5.5
+APP_ROOT=$HOME_APPS/$APP_NAME
+APP_BUILD=$APP_ROOT/$COMP_VERSION/build
+APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
+APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/${APP_NAME}-${APP_VERSION}.tar.gz
+~~~
+
+~~~bash
+mkdir -pv $APP_BUILD
+cd $APP_BUILD
+curl -L $APP_URL | tar xzvf -
+cd $APP_NAME-$APP_VERSION/
+./configure --enable-fortran --with-zlib=$ZLIB_ROOT--with-szlib=$LIBAEC_ROOT --prefix=$APP_INSTALL  
+make -j4
+make -j4 check
 make install
 ~~~
