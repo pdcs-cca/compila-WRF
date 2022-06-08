@@ -127,7 +127,7 @@ APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/jasper-1.900.22.tar
 ~~~bash
 mkdir -pv $APP_BUILD
 cd $APP_BUILD
-curl -L $APP_URL | tar xjvf -
+curl -L $APP_URL | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
 ./configure --prefix=$APP_INSTALL  
 make
