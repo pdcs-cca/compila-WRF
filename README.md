@@ -24,16 +24,42 @@ APP_VERSION=1.2.12
 APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
+APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/zlib-1.2.12.tar.gz
 ~~~
 
 ~~~bash
 mkdir -pv $APP_BUILD
 cd $APP_BUILD
-curl -L https://github.com/pdcs-cca/compila-WRF/raw/main/src/zlib-1.2.12.tar.gz | tar xzvf -
+curl -L $APP_URL | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
 ./configure --prefix=$APP_INSTALL  
 make
 make install
 ~~~
+
+## LIBAEC
+~~~bash
+HOME_APPS=/opt/software/apps
+COMP_VERSION=intel/2021u5
+export CC=icc FC=ifort F77=ifort F90=ifort CXX=icpc
+export CFLAGS="-O3"
+APP_NAME=libaec
+APP_VERSION=1.0.6
+APP_ROOT=$HOME_APPS/$APP_NAME
+APP_BUILD=$APP_ROOT/$COMP_VERSION/build
+APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
+APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/libaec-1.0.6.tar.gz
+~~~
+~~~bash
+mkdir -pv $APP_BUILD
+cd $APP_BUILD
+curl -L $APP_URL | tar xzvf -
+cd $APP_NAME-$APP_VERSION/
+./configure --prefix=$APP_INSTALL  
+make
+make install
+~~~
+
+
 
 
