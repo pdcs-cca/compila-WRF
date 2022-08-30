@@ -20,6 +20,7 @@ sudo apt -y install gfortran flex curl axel vim htop mpich libssl-dev lmod mc gi
 export HOME_APPS=/opt/software/apps
 export COMP_VERSION=gcc/9.4.0
 sudo mkdir -pv $HOME_APPS
+sudo chown -v $USER $HOME_APPS
 
 ~~~
 
