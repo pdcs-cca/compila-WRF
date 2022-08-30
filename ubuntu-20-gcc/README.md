@@ -13,8 +13,8 @@ Compilación del modelo WRF 4.4.1 utilizando compiladores gcc 9.4.0
 
 ## Requisitos
 ~~~bash
-apt install build-essential
-apt install gfortran flex curl axel vim htop mpich libssl-dev lmod mc git
+sudo apt install build-essential
+sudo apt install gfortran flex curl axel vim htop mpich libssl-dev lmod mc git
 ~~~
 ## Compilador y directorio de apps
 ~~~bash
