@@ -71,7 +71,7 @@ make
 make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
-export LIBAEC_ROOT=$APP_ROOT
+export LIBAEC_ROOT=$APP_INSTALL
 
 ~~~
 
@@ -149,6 +149,8 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export JASPERLIB_ROOT=$APP_INSTALL
+export JASPERLIB=$JASPERLIB_ROOT/lib
+export JASPERINC=$JASPERLIB_ROOT/include
 
 ~~~
 
