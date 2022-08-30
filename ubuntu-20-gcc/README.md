@@ -169,7 +169,7 @@ mkdir -pv $APP_BUILD
 cd $APP_BUILD
 curl -L $APP_URL | tar xzvf -
 cd $APP_NAME-$APP_VERSION/
-./configure --enable-fortran --with-zlib=$ZLIB_ROOT--with-szlib=$LIBAEC_ROOT --prefix=$APP_INSTALL  
+./configure --enable-fortran --with-zlib=$ZLIB_ROOT --with-szlib=$LIBAEC_ROOT --prefix=$APP_INSTALL  
 make -j4
 make -j4 check
 make install
