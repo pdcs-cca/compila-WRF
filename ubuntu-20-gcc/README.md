@@ -13,13 +13,13 @@ Compilación del modelo WRF 4.4.1 utilizando compiladores gcc 9.4.0
 
 ## Requisitos
 ~~~bash
-sudo apt install build-essential
-sudo apt install gfortran flex curl axel vim htop mpich libssl-dev lmod mc git
+sudo apt -y install gfortran flex curl axel vim htop mpich libssl-dev lmod mc git tmux
 ~~~
 ## Compilador y directorio de apps
 ~~~bash
 export HOME_APPS=/opt/software/apps
 export COMP_VERSION=gcc/9.4.0
+
 ~~~
 
 
@@ -32,6 +32,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/zlib-1.2.12.tar.gz
+
 ~~~
 
 ~~~bash
@@ -45,6 +46,7 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export ZLIB_ROOT=$APP_INSTALL
+
 ~~~
 
 ## LIBAEC
