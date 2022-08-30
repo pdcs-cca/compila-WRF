@@ -59,6 +59,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/libaec-1.0.6.tar.gz
+
 ~~~
 ~~~bash
 mkdir -pv $APP_BUILD
@@ -71,6 +72,7 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export LIBAEC_ROOT=$APP_ROOT
+
 ~~~
 
 ## CURL
@@ -82,6 +84,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/curl-7.82.0.tar.gz
+
 ~~~
 ~~~bash
 mkdir -pv $APP_BUILD
@@ -94,6 +97,7 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export CURL_ROOT=$APP_INSTALL
+
 ~~~
 
 ## LIBPNG
@@ -105,6 +109,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/libpng-1.6.37.tar.gz
+
 ~~~
 
 ~~~bash
@@ -118,6 +123,7 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export LIBPNG_ROOT=$APP_INSTALL
+
 ~~~
 
 ## JASPERLIB 
@@ -129,6 +135,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/jasper-1.900.22.tar.gz
+
 ~~~
 
 ~~~bash
@@ -142,6 +149,7 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export JASPERLIB_ROOT=$APP_INSTALL
+
 ~~~
 
 ## HDF5
@@ -153,6 +161,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/${APP_NAME}-${APP_VERSION}.tar.gz
+
 ~~~
 
 ~~~bash
@@ -168,6 +177,7 @@ export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export HDF5_ROOT=$APP_INSTALL
 export HFD5=$APP_INSTALL
+
 ~~~
 
 
@@ -179,6 +189,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/${APP_NAME}-${APP_VERSION}.tar.gz
+
 ~~~
 
 ~~~bash
@@ -193,6 +204,7 @@ make install
 export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export NETCDF_C_ROOT=$APP_INSTALL
+
 ~~~
 
 
@@ -204,6 +216,7 @@ APP_ROOT=$HOME_APPS/$APP_NAME
 APP_BUILD=$APP_ROOT/$COMP_VERSION/build
 APP_INSTALL=$APP_ROOT/$COMP_VERSION/$APP_VERSION
 APP_URL=https://github.com/pdcs-cca/compila-WRF/raw/main/src/${APP_NAME}-${APP_VERSION}.tar.gz
+
 ~~~
 
 ~~~bash
@@ -219,4 +232,5 @@ export LDFLAGS="-L$APP_INSTALL/lib $LDFLAGS"
 export CPPFLAGS="-I$APP_INSTALL/include $CPPFLAGS"
 export NETCDF_FORTRAN_ROOT=$APP_INSTALL
 export NETCDF=$APP_INSTALL
+
 ~~~
