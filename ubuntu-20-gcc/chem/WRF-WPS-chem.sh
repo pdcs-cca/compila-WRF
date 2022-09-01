@@ -181,19 +181,18 @@ export YACC="/usr/bin/yacc -d"
 export FLEX_LIB_DIR="/usr/lib/x86_64-linux-gnu"
 
 sed -i 's/FALSE/TRUE/' arch/Config.pl 
-curl -LO https://raw.githubusercontent.com/pdcs-cca/compila-WRF/main/ubuntu-20-gcc/configure.wrf 
+curl -LO https://raw.githubusercontent.com/pdcs-cca/compila-WRF/main/ubuntu-20-gcc/chem/configure.wrf
 /usr/sbin/logsave  compile-$(date +%s).log  ./compile -j 4 em_real 
 echo "prepend_path(\"PATH\",\"$HOME_APPS/wrf/$COMP_VERSION/WRF/main\")
 setenv(\"WRF_ROOT\",\"$HOME_APPS/wrf/$COMP_VERSION/WRF\")
 setenv(\"WRF_DIR\",\"$HOME_APPS/wrf/$COMP_VERSION/WRF\") " >> $WRF_MODULE   
-
 
 _banner "WPS"
 cd $HOME_APPS/wrf-chem/$COMP_VERSION 
 curl -L https://github.com/wrf-model/WPS/archive/refs/tags/v4.4.tar.gz | tar xzvf -
 ln -sv WPS-4.4 WPS
 cd WPS-4.4
-curl -LO https://raw.githubusercontent.com/pdcs-cca/compila-WRF/main/ubuntu-20-gcc/configure.wps 
+curl -LO https://raw.githubusercontent.com/pdcs-cca/compila-WRF/main/ubuntu-20-gcc/chem/configure.wps
 /usr/sbin/logsave  compile-$(date +%s).log  ./compile  
 mkdir bin 
 cp -v *.exe bin 
