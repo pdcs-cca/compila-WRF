@@ -96,9 +96,11 @@ _modulo $APP_NAME $APP_VERSION
 ####
 ###
 ##
+
+sudo apt -y install gfortran tcsh flex curl axel vim htop mpich libssl-dev lmod mc git tmux figlet
+source /etc/profile.d/lmod.sh
 _banner "WRF 4.4.1"
 ml purge 
-sudo apt -y install gfortran tcsh flex curl axel vim htop mpich libssl-dev lmod mc git tmux figlet
 export HOME_APPS=$HOME/software/apps
 export COMPILER_NAME=gcc
 export COMPILER_VERSION=9.4.0
