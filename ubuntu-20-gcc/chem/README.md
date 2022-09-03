@@ -15,7 +15,7 @@ bash WRF-WPS-chem.sh
 ml wrf 
 curl -L https://www2.mmm.ucar.edu/wrf/OnLineTutorial/wrf_cloud/wrf_simulation_CONUS12km.tar.gz | tar xzvf -
 cd conus_12km
-ln -s $WRF_ROOT/* .
+ln -s $WRF_ROOT/test/em_real/* .
 mpiexec.hydra -n 4 wrf.exe
 ~~~
 
