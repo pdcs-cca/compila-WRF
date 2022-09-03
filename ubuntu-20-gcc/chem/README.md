@@ -1,6 +1,6 @@
 # Compilación de WRF 4.4.1 con química (WRF-Chem) y WPS 4.4
 
-El script `WRF-WPS-chem.sh` instala las depencias para la compilación de  WRF-Chem en Ubuntu 20 "Focal Fossa", durante el proceso generá archivos de modulos "Lua Lmod"  para el uso del software
+El script `WRF-WPS-chem.sh` instala las depencias para la compilación de  WRF-Chem en Ubuntu  20.04.5 LTS "Focal Fossa" gcc version 9.4.0, durante el proceso generá archivos de modulos "Lua Lmod"  para el uso del software
 
 ## Uso del script
 
