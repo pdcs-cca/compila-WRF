@@ -32,20 +32,20 @@ PERL			=	perl
 
 RANLIB			=	echo
 
-WRF_DIR = /home/wrf/software/apps/wrf/gcc/9.4.0/WRF
+WRF_DIR 		= ../WRF
 
 WRF_INCLUDE     =       -I$(WRF_DIR)/external/io_netcdf \
                         -I$(WRF_DIR)/external/io_grib_share \
                         -I$(WRF_DIR)/external/io_grib1 \
                         -I$(WRF_DIR)/external/io_int \
                         -I$(WRF_DIR)/inc \
-                        -I$(NETCDF)/include
+                        $(NETCDF_C_CPPFLAGS)
 
 WRF_LIB         =       -L$(WRF_DIR)/external/io_grib1 -lio_grib1 \
                         -L$(WRF_DIR)/external/io_grib_share -lio_grib_share \
                         -L$(WRF_DIR)/external/io_int -lwrfio_int \
                         -L$(WRF_DIR)/external/io_netcdf -lwrfio_nf \
-                        -L$(NETCDF)/lib -lnetcdff -lnetcdf
+                        $(NETCDF_C_LDFLAGS) -lnetcdff -lnetcdf
 
 #### Architecture specific settings ####
 
@@ -59,13 +59,13 @@ INTERNAL_GRIB2_PATH     =
 #   Settings for Linux x86_64, gfortran    (dmpar) 
 #
 #
-COMPRESSION_LIBS    = -L/home/wrf/software/apps/jasper/gcc/9.4.0/1.900.22/lib -ljasper -lpng -lz
-COMPRESSION_INC     = -I/home/wrf/software/apps/jasper/gcc/9.4.0/1.900.22/include
+COMPRESSION_LIBS    =  $(JASPER_LDFLAGS) $(LIBPNG_LDFLAGS) $(ZLIB_LDFLAGS) -ljasper -lpng -lz
+COMPRESSION_INC     =  $(JASPER_CPPFLAGS) $(LIBPNG_CPPFLAGS) $(ZLIB_CPPFLAGS) 
 FDEFS               = -DUSE_JPEG2000 -DUSE_PNG
-SFC                 = gfortran
-SCC                 = gcc
-DM_FC               = mpif90
-DM_CC               = mpicc
+SFC                 = \time -v gfortran
+SCC                 = \time -v gcc
+DM_FC               = \time -v mpif90
+DM_CC               = \time -v mpicc
 FC                  = $(DM_FC) 
 CC                  = $(DM_CC)
 LD                  = $(FC)
