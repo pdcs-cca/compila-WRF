@@ -103,7 +103,7 @@ _modulo $APP_NAME $APP_VERSION
 ##
 
 sudo apt -y install gfortran gcc make tcsh flex curl axel vim htop bison mpich libssl-dev mc git tmux figlet
-dpkg -l lmod || sudo apt -y install lmod
+ml purge || sudo apt -y install lmod
 test -e /etc/profile.d/lmod.sh &&  source /etc/profile.d/lmod.sh
 
 _banner "WRF 4.4.1"
